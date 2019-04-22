@@ -1,0 +1,8 @@
+danix43\api\database\Private.class
+danix43\api\database\Stb.class
+danix43\api\database\repo\StbRepository.class
+danix43\api\APIControl.class
+danix43\api\Start.class
+danix43\api\database\repo\TermometreRepository.class
+danix43\api\database\repo\PrivateRepository.class
+danix43\api\database\Termometre.class

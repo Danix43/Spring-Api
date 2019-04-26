@@ -12,12 +12,16 @@ Back-End
   - It isn't a priority right now because the API isn't exposed public yet, the tests are made on localhost or private hosting
   - As a authentication method is good to consider OAuth but it requires mode research to implement
   - The database authentication method is considered but it will be more difficult to implement and encrypt
+  - Update (26.04.2019)
+    - Currently is considered using an api key somewere in the headers or in the url (More research is required)
 
-- The system for error handleling is not implement
-  - It isn't a priority right now because Spring has a default error handleling method witch is some how effective
-  - When the a error is triggred, the webpage will display the error and will be send as well in the response body
+- Exception handling system added (26.04.2019)
+  - Basic exception handling has been created
+  - All the GET endpoints have EntityNotFoundedException if the requested resource doesn't exist.
+  - The system returns a message and http code in the response
+  - The front-end part of the system is not made because of the current html progress
 
 Front-End 
 
 - Need to create the root webpage
-- Need to create a admin console 
+- Need to create a admin console (Spring admin console maybe?) 

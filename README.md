@@ -1,5 +1,3 @@
-</------------ Spring API ------------ \>
-
 # Back-End
     
 1. Need to implement websockets for realtime communication
@@ -25,12 +23,13 @@
   - The system returns a message and http code in the response
   - The front-end part of the system is not made because of the current html progress
 
+
 # Front-End 
 
 - Need to create the root webpage
 - Need to create a admin console (Spring admin console maybe?) 
 
 # Notes
-The JUnit tests sucks and is only one rw :/
-Research started for the move into containes. Switching from Apache Tomcat and other separated services to containes, specifically Docker Containers.
-The current progress on the authentication system is moved to a special branch. This branch remains for working versions.
+- The JUnit tests sucks and is only one rw :/
+- Research started for the move into containes. Switching from Apache Tomcat and other separated services to containes, specifically Docker Containers.
+- The current progress on the authentication system is moved to a special branch. This branch remains for working versions.

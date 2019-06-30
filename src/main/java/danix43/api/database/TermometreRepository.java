@@ -1,10 +1,10 @@
-package danix43.api.database.repo;
+package danix43.api.database;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import danix43.api.database.Termometre;
+import danix43.api.models.Termometre;
 
 @Repository
 public interface TermometreRepository extends JpaRepository<Termometre, Integer> {

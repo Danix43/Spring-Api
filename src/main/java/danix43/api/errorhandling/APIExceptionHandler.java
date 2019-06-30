@@ -1,4 +1,4 @@
-package danix43.api.modules;
+package danix43.api.errorhandling;
 
 import javax.persistence.EntityNotFoundException;
 

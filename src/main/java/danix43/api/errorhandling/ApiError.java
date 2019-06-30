@@ -1,7 +1,6 @@
-package danix43.api.modules;
+package danix43.api.errorhandling;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 import org.springframework.http.HttpStatus;
 
@@ -13,7 +12,6 @@ public class ApiError {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
 	private LocalDateTime timestamp;
 	private String message;
-	private List<ApiSubError> subErrors;
 
 	private ApiError() {
 		timestamp = LocalDateTime.now();
@@ -43,10 +41,6 @@ public class ApiError {
 		return message;
 	}
 	
-	public List<ApiSubError> getSubErrors() {
-		return subErrors;
-	}
-
 	public void setStatus(HttpStatus status) {
 		this.status = status;
 	}
@@ -57,10 +51,6 @@ public class ApiError {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public void setSubErrors(List<ApiSubError> subErrors) {
-		this.subErrors = subErrors;
 	}
 
 }

@@ -1,7 +1,5 @@
 package danix43.api;
 
-// TODO moved to the root folder
-
 import java.util.List;
 
 import javax.persistence.EntityNotFoundException;
@@ -19,12 +17,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import danix43.api.database.PrivateRepository;
+import danix43.api.database.StbRepository;
+import danix43.api.database.TermometreRepository;
 import danix43.api.models.Private;
 import danix43.api.models.Stb;
 import danix43.api.models.Termometre;
-import danix43.api.models.database.PrivateRepository;
-import danix43.api.models.database.StbRepository;
-import danix43.api.models.database.TermometreRepository;
 import danix43.api.models.TermometreDTO;
 
 @RestController
@@ -50,7 +48,7 @@ public class APIControl {
 	// termometre branch
 
 	@GetMapping(path = "/house/termometre/locatie/{location}")
-	public @ResponseBody ResponseEntity<Termometre> getStationByLocation(
+	public @ResponseBody ResponseEntity<Iterable<Termometre>> getStationByLocation(
 			@PathVariable String location) {
 		if (termometruAccess.findByLocation(location) != null) {
 			return ResponseEntity.ok(termometruAccess.findByLocation(location));
@@ -60,7 +58,7 @@ public class APIControl {
 	}
 
 	@GetMapping(path = "/house/termometre/machinename/{machinename}")
-	public @ResponseBody ResponseEntity<Termometre> getStationByMachineName(
+	public @ResponseBody ResponseEntity<Iterable<Termometre>> getStationByMachineName(
 			@PathVariable String machineName) {
 		if (termometruAccess.findByMachinename(machineName) != null) {
 			return ResponseEntity.ok(termometruAccess.findByMachinename(machineName));
@@ -70,7 +68,7 @@ public class APIControl {
 	}
 
 	@GetMapping(path = "/house/termometre/sensorUsed/{usedSensor}")
-	public @ResponseBody ResponseEntity<Termometre> getStationByUsedSensor(
+	public @ResponseBody ResponseEntity<Iterable<Termometre>> getStationByUsedSensor(
 			@PathVariable String usedSensor) {
 		if (termometruAccess.findByUsedsensor(usedSensor) != null) {
 			return ResponseEntity.ok(termometruAccess.findByUsedsensor(usedSensor));

@@ -107,18 +107,12 @@ public class APIControl {
 
 	@PatchMapping(path = "/house/termometre/update", consumes = "application/json")
 	public ResponseEntity<Termometre> updateExistingInformation(
-			@RequestBody Termometre termometruToUpdate,
+			@RequestBody TermometreDTO termometruToUpdate,
 			@RequestParam(name = "id", required = true) int id) {
 
 		Termometre termometruPersistent = termometruAccess.findById(id);
-		termometruPersistent.setMachinename(termometruToUpdate.getMachinename());
-		termometruPersistent.setMachinetype(termometruToUpdate.getMachinetype());
-		termometruPersistent.setUsedsensor(termometruToUpdate.getUsedsensor());
-		termometruPersistent.setLocation(termometruToUpdate.getLocation());
-		termometruPersistent.setTemperature(termometruToUpdate.getTemperature());
-		termometruPersistent.setTemperatureinkelvin(termometruToUpdate.getTemperatureinkelvin());
-		termometruPersistent.setHumidity(termometruToUpdate.getHumidity());
-
+		modelMapper.map(termometruToUpdate, termometruPersistent);
+		
 		termometruAccess.save(termometruPersistent);
 		return ResponseEntity.ok(termometruPersistent);
 	}
@@ -186,7 +180,7 @@ public class APIControl {
 		}
 	}
 
-	@GetMapping(path = "/transport/stb/linia.{linia}")
+	@GetMapping(path = "/transport/stb/linia/{linia}")
 	public @ResponseBody ResponseEntity<List<Stb>> getLinie(
 			@PathVariable String linia) {
 		if (transportStbAccess.findByLinia(linia) != null) {

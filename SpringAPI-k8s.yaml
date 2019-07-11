@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: backend-api
+  labels:
+    app: backend-api
+spec:
+  containers:
+  - name: api
+    image: danix43/api:latest
+    ports:
+    - name: containerport
+      containerPort: 4050
+      protocol: TCP 

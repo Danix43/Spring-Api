@@ -47,7 +47,7 @@ public class APIControl {
 
 	// termometre branch
 
-	@GetMapping(path = "/house/termometre/locatie/{location}")
+	@GetMapping(path = "/house/termometre/locatie/{location}/")
 	public @ResponseBody ResponseEntity<Iterable<Termometre>> getStationByLocation(
 			@PathVariable String location) {
 		if (termometruAccess.findByLocation(location) != null) {
@@ -57,7 +57,7 @@ public class APIControl {
 		}
 	}
 
-	@GetMapping(path = "/house/termometre/machinename/{machinename}")
+	@GetMapping(path = "/house/termometre/machinename/{machinename}/")
 	public @ResponseBody ResponseEntity<Iterable<Termometre>> getStationByMachineName(
 			@PathVariable String machineName) {
 		if (termometruAccess.findByMachinename(machineName) != null) {
@@ -67,7 +67,7 @@ public class APIControl {
 		}
 	}
 
-	@GetMapping(path = "/house/termometre/sensorUsed/{usedSensor}")
+	@GetMapping(path = "/house/termometre/sensorUsed/{usedSensor}/")
 	public @ResponseBody ResponseEntity<Iterable<Termometre>> getStationByUsedSensor(
 			@PathVariable String usedSensor) {
 		if (termometruAccess.findByUsedsensor(usedSensor) != null) {
@@ -77,7 +77,7 @@ public class APIControl {
 		}
 	}
 
-	@GetMapping(path = "/house/termometre/id/{id}")
+	@GetMapping(path = "/house/termometre/id/{id}/")
 	public @ResponseBody ResponseEntity<Termometre> getStationById(
 			@PathVariable int id) {
 		if (termometruAccess.findById(id) != null) {
@@ -129,7 +129,7 @@ public class APIControl {
 		
 	}
 
-	@GetMapping(path = "/private/device/devicename/{deviceName}")
+	@GetMapping(path = "/private/device/devicename/{deviceName}/")
 	public @ResponseBody ResponseEntity<Iterable<Private>> getDeviceByName(
 			@PathVariable String deviceName) {
 		if (privateDevicesAccess.findByName(deviceName) != null) {
@@ -139,7 +139,7 @@ public class APIControl {
 		}
 	}
 
-	@GetMapping(path = "/private/device/macaddress/{macAddress}")
+	@GetMapping(path = "/private/device/macaddress/{macAddress}/")
 	public ResponseEntity<Iterable<Private>> getDeviceByMacAddress(
 			@RequestParam() String macAddress) {
 		if (privateDevicesAccess.findByMacaddress(macAddress) != null) {
@@ -149,7 +149,7 @@ public class APIControl {
 		}
 	}
 
-	@GetMapping(path = "/private/device/lastdate/{lastDateKnown}")
+	@GetMapping(path = "/private/device/lastdate/{lastDateKnown}/")
 	public ResponseEntity<Iterable<Private>> getDeviceByLastDateKnown(
 			@PathVariable String lastDateKnown) {
 		if (privateDevicesAccess.findByLastdateknown(lastDateKnown) != null) {
@@ -170,7 +170,7 @@ public class APIControl {
 		}
 	}
 
-	@GetMapping(path = "/transport/stb/statia/{statia}")
+	@GetMapping(path = "/transport/stb/statia/{statia}/")
 	public @ResponseBody ResponseEntity<List<Stb>> getStatie(
 			@PathVariable String statia) {
 		if (transportStbAccess.findByStatia(statia) != null) {
@@ -180,7 +180,7 @@ public class APIControl {
 		}
 	}
 
-	@GetMapping(path = "/transport/stb/linia/{linia}")
+	@GetMapping(path = "/transport/stb/linia/{linia}/")
 	public @ResponseBody ResponseEntity<List<Stb>> getLinie(
 			@PathVariable String linia) {
 		if (transportStbAccess.findByLinia(linia) != null) {

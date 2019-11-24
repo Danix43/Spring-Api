@@ -1,4 +1,6 @@
-# Back-End
+# Predecesor of Hercules-API / this used only for archiving
+
+### Back-End
     
 1. Need to implement websockets for realtime communication
   - The current system of transmiting data is ok, but with the system scalling it will be a problem for long term
@@ -24,12 +26,12 @@
   - The front-end part of the system is not made because of the current html progress
 
 
-# Front-End 
+### Front-End 
 
 - Need to create the root webpage
 - Need to create a admin console (Spring admin console maybe?) 
 
-# Notes
+### Notes
 - The JUnit tests sucks and is only one rw :/
 - Research started for the move into containes. Switching from Apache Tomcat and other separated services to containes, specifically Docker Containers.
 - The current progress on the authentication system is moved to a special branch. This branch remains for working versions.
